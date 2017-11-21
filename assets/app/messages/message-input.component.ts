@@ -2,7 +2,6 @@ import {Component} from "@angular/core";
 import {MessageService} from "./message.service";
 import {Message} from "./message.model";
 import {NgForm} from "@angular/forms";
-import {error} from "util";
 
 @Component({
     selector: "app-message-input",
@@ -19,8 +18,7 @@ export class MessageInputComponent {
         this.messageService.addMessage(message)
             .subscribe(
                 data => console.log(data),
-                error => console.error(error),
-
+                error => console.error(error)
             );
         form.resetForm();
     }
